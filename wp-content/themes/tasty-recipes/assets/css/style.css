@@ -434,6 +434,8 @@ a:focus {
 }
 
 .chocolate_section .box .img-box {
+    margin-left: auto;
+    margin-right: auto;
   width: 200px;
   height: 200px;
   display: -webkit-box;
@@ -1016,6 +1018,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
+    width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1024,6 +1027,7 @@ a:focus {
           justify-content: center;
   position: relative;
   background-color: #ffffff;
+  flex-direction: column;
 }
 
 .footer_section p {
