@@ -35,3 +35,18 @@ function project_enqueue_assets(  ){
 }
 
 add_action('wp_enqueue_scripts', 'project_enqueue_assets');
+
+/**
+ * Register our navigation menus
+ *
+ * @return void
+ */
+function project_register_nav_menus() {
+    register_nav_menus(
+        array(
+            'primary_menu'      => __('Primary Menu', 'softuni'),
+            
+        )
+    );
+}
+add_action('after_setup_theme', 'project_register_nav_menus');
