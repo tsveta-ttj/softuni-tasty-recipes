@@ -1,1 +1,55 @@
 <?php
+if (!class_exists( 'Su_Recipes' )) :
+
+    /**
+     * This is our Recipe Class for registering Recipe Custom Type and taxonomy for it.
+     */
+    class Su_Recipes {
+        public function __construct() {
+            // Register the CPT and taxonomies
+            add_action( 'init', array( $this, 'recipes_cpt' ) );
+        }
+
+        /**
+         * Register our Recipe Custom Type
+         *
+         * @return void 
+         */
+        public function recipes_cpt() {
+            $labels = array(
+                'name'          => _x( 'Recipes', 'Post type general name', 'softuni' ),
+                'singular_name' => _x( 'Recipe', 'Post type singular name', 'softuni' ),
+                'menu_name'     => _x( 'Recipes', 'Admin Menu text', 'softuni' ),
+                'name_admin_bar'=> _x( 'Recipe', 'Add New on Toolbar', 'softuni' ),
+                'add_new'       => __( 'Add New', 'softuni' ),
+                'add_new_item'  => __( 'Add New Recipe', 'softuni' ),
+                'new_item'      => __( 'New Recipe', 'softuni' ),
+                'edit_item'     => __ ('Edit Recipe', 'softuni' ),
+                'view_item'     => __( 'View Recipe', 'softuni' ),
+                'all_items'     => __( 'All Recipes', 'softuni' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'capability_type'    => 'post',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions' ),
+                'show_in_rest'       => true
+            );
+
+            register_post_type('recipe', $args);
+        }
+    }
+
+
+
+
+    $su_recipe_instance = new Su_Recipes();
+endif;
