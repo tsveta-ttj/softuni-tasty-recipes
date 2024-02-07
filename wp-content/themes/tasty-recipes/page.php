@@ -3,6 +3,7 @@
 <section class="about_section layout_padding ">
 
     <section class="layout_padding ">
+        <h1>Hellp from page.php</h1>
         <div class="container">
             <div class="row">
 
