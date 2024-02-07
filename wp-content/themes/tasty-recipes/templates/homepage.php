@@ -13,17 +13,12 @@
                             <div class="col-md-6">
                                 <div class="detail_box">
                                     <h1>
-                                        Tasty Chocolate <br>
+                                        Tasty & Healthy <br>
                                         <span>
                                             Recipes
                                         </span>
                                     </h1>
-                                    <a href="#">
-                                        <span>
-                                            Read More
-                                        </span>
-                                        <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/white-arrow.png' ?>" alt="White arrow to the right">
-                                    </a>
+
                                 </div>
                             </div>
                             <div class="col-md-4 ml-auto">
@@ -41,114 +36,22 @@
             <div class="container">
                 <div class="heading_container">
                     <h2>
-                        Our chocolate products
+                    Gluten free recipes
                     </h2>
                     <p>
-                        Many desktop publishing packages and web pagend web page editors now use Lorem Ipsum as their
+                        Below you can view our gluten-free recipes:
                     </p>
                 </div>
             </div>
+
             <div class="container">
 
                 <div class="chocolate_container">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/chocolate1.png' ?>" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/chocolate2.png' ?>" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/chocolate3.png' ?>" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/chocolate1.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/chocolate2.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/chocolate3.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Yummy <span>chocolate</span>
-                            </h6>
-                            <h5>
-                                $5.0
-                            </h5>
-                            <a href="">
-                                BUY NOW
-                            </a>
-                        </div>
-                    </div>
-
+                <?php
+                    if ( function_exists( 'recipes_display_gluten_free_posts' ) ) {
+                        recipes_display_gluten_free_posts();
+                    }
+                    ?>
                 </div>
 
             </div>
