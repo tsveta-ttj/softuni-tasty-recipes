@@ -1041,3 +1041,8 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+.recipe_container{
+    display: flex;
+    
+}
