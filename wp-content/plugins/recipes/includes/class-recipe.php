@@ -8,6 +8,7 @@ if (!class_exists( 'Su_Recipes' )) :
         public function __construct() {
             // Register the CPT and taxonomies
             add_action( 'init', array( $this, 'recipes_cpt' ) );
+            add_action( 'init', array( $this, 'recipes_category_taxonomy' ));
         }
 
         /**
@@ -45,6 +46,26 @@ if (!class_exists( 'Su_Recipes' )) :
             );
 
             register_post_type('recipe', $args);
+        }
+
+        /**
+         * Register our Category taxonomy for our Recipe CPT
+         * 
+         * @return void 
+         */
+        public function recipes_category_taxonomy(){
+
+            $labels = array(
+                'name'          => 'Categories',
+                'singular_name' => 'Category',
+            );
+
+            $args = array(
+                'labels'       => $labels,
+                'show_in_rest' => true,
+            );
+
+            register_taxonomy('recipes_category', 'recipe', $args);
         }
     }
 

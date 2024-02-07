@@ -19,5 +19,5 @@ if ( ! defined( 'RECIPES_PlUGIN_DIR_INCLUDE' ) ) {
     define( 'RECIPES_PlUGIN_DIR_INCLUDE', plugin_dir_path( __FILE__ ) . 'includes' );
  }
 
-require RECIPES_PlUGIN_DIR_INCLUDE . '/cpt-recipes.php';
+require RECIPES_PlUGIN_DIR_INCLUDE . '/class-recipe.php';
 require RECIPES_PlUGIN_DIR_INCLUDE . '/functions.php';
