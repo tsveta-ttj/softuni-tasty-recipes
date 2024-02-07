@@ -1,27 +1,18 @@
-<div class="row">
-    <div class="col-md-6">
-        <div class="detail-box">
-            <div class="heading_container">
-            <h1>Hello from template blog.php</h1>
-
-                <h2>
-                    <?php the_title(); ?>
-                </h2>
-            </div>
-            <p>
-            <?php the_content(); ?>
-            </p>
-            <a href="#">
-                <span>
-                    Read More
-                </span>
-                <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/color-arrow.png' ?>" alt="">
-            </a>
+<div class="col-md-10">
+    <div class="detail-box">
+        <div class="heading_container">
+            <h2>
+                <?php the_title(); ?>
+            </h2>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="img-box">
-            <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/about-img.png' ?>" alt="">
-        </div>
+        <p>
+            <?php the_excerpt(); ?>
+        </p>
+        <a href="<?php echo get_the_permalink(); ?>">
+            <span>
+                Read More
+            </span>
+            <img src="<?php echo TASTY_RECIPES_ASSETS_URL . '/images/color-arrow.png' ?>" alt="">
+        </a>
     </div>
 </div>
