@@ -9,6 +9,12 @@ if (!class_exists( 'Su_Recipes' )) :
             // Register the CPT and taxonomies
             add_action( 'init', array( $this, 'recipes_cpt' ) );
             add_action( 'init', array( $this, 'recipes_category_taxonomy' ));
+                    
+            // Register Metaboxes
+            add_action( 'add_meta_boxes', array( $this, 'recipe_register_meta_boxes' ));
+
+            // Save Actions
+            add_action('save_post', array( $this, 'recipe_meta_save'));
         }
 
         /**
@@ -67,10 +73,48 @@ if (!class_exists( 'Su_Recipes' )) :
 
             register_taxonomy('recipes_category', 'recipe', $args);
         }
+
+        /**
+        * Register meta box(es).
+        */
+        public function recipe_register_meta_boxes(){
+            add_meta_box('gluten_free', __('Is Gluten free?', 'softuni'), array( $this, 'recipe_featured_metabox_callback' ), 'recipe', 'side');
+        }
+
+        /**
+        * Callback function for my Featured metabox
+        * 
+        * @return void
+        */
+        function recipe_featured_metabox_callback( $post_id ) {
+            $checked = get_post_meta( $post_id->ID, 'is_gluten_free', true );
+        ?>
+            <div>
+                <label for='isglutenfree'>Is Gluten free?</label>
+                <input id='is-gluten-free' name='isglutenfree' type='checkbox' value='1' <?php checked( $checked, 1, true ); ?>/>
+            </div>
+        <?php
+        }
+    
+        /**
+         * Function to update my Featured metabox
+         * 
+         * @return void
+         */
+        public function recipe_meta_save( $post_id ) {
+            if  (empty( $post_id ) ) {
+                return;
+            }
+
+            $gluten = '';
+
+            if ( isset( $_POST['isglutenfree']) ) {
+                $gluten = $_POST['isglutenfree'];
+            }
+
+            update_post_meta( $post_id, 'is_gluten_free', $gluten );
+        }
     }
-
-
-
 
     $su_recipe_instance = new Su_Recipes();
 endif;
