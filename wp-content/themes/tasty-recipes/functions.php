@@ -1,5 +1,6 @@
 <?php 
-
+// adding featured image support in a WordPress theme
+add_theme_support( 'post-thumbnails' );
 
 if ( ! defined( 'TASTY_RECIPES_ASSETS_VERSION' ) ) {
     define( 'TASTY_RECIPES_ASSETS_VERSION', '0.1' );
@@ -44,8 +45,7 @@ add_action('wp_enqueue_scripts', 'project_enqueue_assets');
 function project_register_nav_menus() {
     register_nav_menus(
         array(
-            'primary_menu'      => __('Primary Menu', 'softuni'),
-            
+            'primary_menu' => __('Primary Menu', 'softuni'),
         )
     );
 }
