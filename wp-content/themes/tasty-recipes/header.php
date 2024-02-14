@@ -31,6 +31,8 @@
 
 </head>
 
+<body <?php body_class(); ?>>
+
 <header class="header_section">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">

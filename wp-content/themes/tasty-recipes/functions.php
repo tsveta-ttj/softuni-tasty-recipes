@@ -32,12 +32,12 @@ function project_enqueue_assets(  ){
 
     wp_enqueue_script('bootstrap.js', TASTY_RECIPES_ASSETS_URL . '/js/bootstrap.js', array(), TASTY_RECIPES_ASSETS_VERSION, $args);
     wp_enqueue_script('custom.js', TASTY_RECIPES_ASSETS_URL . '/js/custom.js', array('jquery'), TASTY_RECIPES_ASSETS_VERSION);
-    wp_enqueue_script('slick.min.js', TASTY_RECIPES_ASSETS_URL . '/js/slick.min.js', array('jquery'), TASTY_RECIPES_ASSETS_VERSION );
+    wp_enqueue_script('slick.min.js', TASTY_RECIPES_ASSETS_URL . '/js/slick.min.js', array('jquery'), TASTY_RECIPES_ASSETS_VERSION, $args);
 }
 
 add_action('wp_enqueue_scripts', 'project_enqueue_assets');
 
-/**
+/**$
  * Register our navigation menus
  *
  * @return void

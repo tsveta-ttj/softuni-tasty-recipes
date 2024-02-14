@@ -10,9 +10,10 @@
     </div>
 </footer>
 <!-- footer section -->
-
+<?php wp_footer(); ?>
+</body> 
 
 <!-- slick slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
 
 </html>

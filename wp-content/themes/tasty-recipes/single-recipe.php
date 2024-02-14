@@ -5,7 +5,7 @@
         <div class="row">
 
             <?php
-            $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnail');
+            $featured_img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail');
             ?>
 
             <div class="col-md-6">
@@ -20,7 +20,7 @@
             </div>
 
             <div class="col-md-6">
-                <?php if (!empty($featured_img_url)) : ?>
+                <?php if ( !empty($featured_img_url) ) : ?>
                     <div class="img-box">
                         <img src="<?php echo $featured_img_url ?>" alt="thumbnails image">
                     </div>

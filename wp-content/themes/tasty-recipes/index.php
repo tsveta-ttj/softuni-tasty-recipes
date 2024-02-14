@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<body <?php body_class(); ?>>
-
     <div class="main_body_content">
         <div class="hero_area">
             <section class="slider_section ">
@@ -153,7 +151,5 @@
         </section>
 
     </div>
-
-</body>
 
 <?php get_footer(); ?>

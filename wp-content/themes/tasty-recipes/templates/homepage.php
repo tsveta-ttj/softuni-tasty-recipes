@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<body <?php body_class(); ?>>
+
 
     <div class="main_body_content">
         <div class="hero_area">
@@ -59,6 +59,6 @@
 
     </div>
 
-</body>
+
 
 <?php get_footer(); ?>
