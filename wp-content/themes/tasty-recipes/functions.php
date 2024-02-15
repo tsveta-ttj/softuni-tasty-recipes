@@ -37,7 +37,7 @@ function project_enqueue_assets(  ){
 
 add_action('wp_enqueue_scripts', 'project_enqueue_assets');
 
-/**$
+/**
  * Register our navigation menus
  *
  * @return void
@@ -50,3 +50,25 @@ function project_register_nav_menus() {
     );
 }
 add_action('after_setup_theme', 'project_register_nav_menus');
+
+
+/**
+ * Register our sidebar menus
+ *
+ * @return void
+ */
+function project_register_sidebars(){
+    register_sidebar( array(
+        'name'          => __( 'Social Media Links Widget', 'softuni' ),
+		'id'            => 'sidebar-1',
+        'description'   => __( 'This is a list of our social media links.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s social_box">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+
+
+	) );
+}
+add_action( 'widgets_init', 'project_register_sidebars' );
+

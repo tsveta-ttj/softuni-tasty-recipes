@@ -916,7 +916,15 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-flow: column;
+  
 }
+  
+.social_box ul {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  }
 
 .info_section .social_box a {
   display: -webkit-box;
