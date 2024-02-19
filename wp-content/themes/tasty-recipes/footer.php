@@ -1,40 +1,20 @@
         <section class="info_section layout_padding2">
             <div class="container">
                 <div class="row info_main_row">
-                    <div class="col-md-6 col-lg-4">
+                    <?php
+                    if ( is_active_sidebar( 'sidebar-3' ) ) {
+                        get_sidebar( 'sidebar-3' );
+                    }
 
-                        <div class="info_links">
-                            <h4>
-                                Menu
-                            </h4>
-                            
-                            <div class="info_links_menu">
-                                <a href="index.html">
-                                    Home
-                                </a>
-                                <a href="about.html">
-                                    About
-                                </a>
-                                <a href="chocolate.html">
-                                    Chocolates
-                                </a>
-                                <a href="testimonial.html">
-                                    Testimonial
-                                </a>
-                                <a href="contact.html">
-                                    Contact us
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    ?>
 
                     <?php
-                    if ( is_active_sidebar( 'sidebar-2' )) {
+                    if ( is_active_sidebar('sidebar-2') ) {
                         get_sidebar( 'sidebar-2' );
                     }
 
                     ?>
-                    
+
                     <?php
                     if ( is_active_sidebar( 'sidebar-1' ) ) {
                         get_sidebar( 'sidebar-1' );
@@ -58,5 +38,6 @@
         </footer>
         <!-- footer section -->
         <?php wp_footer(); ?>
-    </body>
-</html>
+        </body>
+
+        </html>

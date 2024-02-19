@@ -79,6 +79,17 @@ function project_register_sidebars(){
 		'after_title'   => '</h4>',
         
 	) );
+
+    register_sidebar( array(
+        'name'          => __( 'Secondary Menu', 'softuni' ),
+		'id'            => 'sidebar-3',
+        'description'   => __( 'This is a section in footer with our Secondary Menu ' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s info_links">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+ 
+	) );
 }
 add_action( 'widgets_init', 'project_register_sidebars' );
 

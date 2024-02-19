@@ -958,6 +958,12 @@ a:focus {
           flex-direction: column;
 }
 
+.info_links ul{
+
+    padding-left: 0;
+
+}
+
 .info_section .info_links .info_links_menu a {
   color: #ffffff;
 }
