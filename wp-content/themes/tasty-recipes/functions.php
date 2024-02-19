@@ -67,7 +67,17 @@ function project_register_sidebars(){
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 
+	) );
 
+    register_sidebar( array(
+        'name'          => __( 'Contact Us Widget', 'softuni' ),
+		'id'            => 'sidebar-2',
+        'description'   => __( 'This is a section in footer with Contact Us info. We use Contact Information Widget plugin to display contact info as Widget.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+        
 	) );
 }
 add_action( 'widgets_init', 'project_register_sidebars' );

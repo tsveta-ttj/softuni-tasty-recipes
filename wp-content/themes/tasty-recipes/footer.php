@@ -28,35 +28,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <h4>
-                            Contact Us
-                        </h4>
-                        <div class="info_contact">
-                            <a href="">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>
-                                    Location
-                                </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>
-                                    Call +01 1234567890
-                                </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-envelope"></i>
-                                <span>
-                                    demo@gmail.com
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
                     <?php
-                    if (is_active_sidebar('sidebar-1')) {
-                        get_sidebar('sidebar-1');
+                    if ( is_active_sidebar( 'sidebar-2' )) {
+                        get_sidebar( 'sidebar-2' );
+                    }
+
+                    ?>
+                    
+                    <?php
+                    if ( is_active_sidebar( 'sidebar-1' ) ) {
+                        get_sidebar( 'sidebar-1' );
                     }
 
                     ?>
