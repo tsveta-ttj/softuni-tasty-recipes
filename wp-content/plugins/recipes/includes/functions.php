@@ -1,4 +1,5 @@
 <?php
+require plugin_dir_path( __FILE__ ) . '/shortcodes.php';
 
 /**
  * Function that changes the default excerpt length 
@@ -45,5 +46,23 @@ function recipes_display_gluten_free_posts() {
                         
         <?php wp_reset_postdata(); ?>
             
-    <?php endif;
+    <?php endif; ?>
+    <?php
 }
+
+
+
+/**
+ * Wrapper for add_shortcode() functions. Initialized after 'init' hook. 
+ *
+ * @return void
+ */
+function shortcodes_init(){
+    add_shortcode( 'recent-posts', 'recent_posts_function' );
+    
+   }
+
+   add_action('init', 'shortcodes_init');
+
+
+   
