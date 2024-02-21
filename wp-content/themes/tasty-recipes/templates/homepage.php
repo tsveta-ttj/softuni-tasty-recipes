@@ -48,8 +48,8 @@
 
                 <div class="chocolate_container">
                 <?php
-                    if ( function_exists( 'recipes_display_gluten_free_posts' ) ) {
-                        recipes_display_gluten_free_posts();
+                    if ( function_exists( 'display_recipe_by_meta' ) ) {
+                        display_recipe_by_meta('is_gluten_free', '1');
                     }
                     ?>
                 </div>

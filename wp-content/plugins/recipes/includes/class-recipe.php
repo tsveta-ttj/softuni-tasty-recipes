@@ -13,7 +13,7 @@ if ( !class_exists( 'Su_Recipes' ) ) :
             add_action( 'add_meta_boxes', array( $this, 'recipe_register_meta_boxes' ) );
 
             // Save Actions
-            add_action( 'save_post', array( $this, 'recipe_meta_save' ) );
+            add_action( 'save_post', array( $this, 'recipe_meta_is_gluten_save' ) );
         }
 
         /**
@@ -96,11 +96,11 @@ if ( !class_exists( 'Su_Recipes' ) ) :
         }
 
         /**
-         * Function to update my Featured metabox
+         * Function to update my Is Gluten meta
          * 
          * @return void
          */
-        public function recipe_meta_save( $post_id ) {
+        public function recipe_meta_is_gluten_save( $post_id ) {
             if ( empty( $post_id ) ) {
                 return;
             }

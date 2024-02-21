@@ -1,42 +1,30 @@
 <?php
-require plugin_dir_path( __FILE__ ) . '/shortcodes.php';
-
-/**
- * Function that changes the default excerpt length 
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function new_excerpt_length($length) {
-
-    return 10;
-}
-
-add_filter('excerpt_length', 'new_excerpt_length', 999);
+require plugin_dir_path( __FILE__ ) . '/config.php';
 
 
 /**
- * Show the gluten free posts from Recipe CPT
- *
- * @param [type] $posts_per_page
- * @return void
+ * Display recipes from Recipe CPT, filtered by chosen meta (e.g. is gluten)
+ * @param string - $key - Meta_key/Custom field key.
+ * @param string - $value - Custom field value we want to compare
+ * @param string - $compare - Operator to test. Default: '='
  */
-function recipes_display_gluten_free_posts() {
+function display_recipe_by_meta( $key, $value, $compare = '=') {
     
     $recipes_query_args = array(
         'post_type' => 'recipe',
         'post_status' => 'publish',
         'meta_query' => array(
             array(
-                'key' => 'is_gluten_free',
-                'value' => '1',
-                'compare' => '=',
+                'key' => $key,
+                'value' => $value,
+                'compare' => $compare,
             )
         ),
     );
-
+    
     $recipes_query = new WP_Query( $recipes_query_args );
 
-    ?>
+?>
 
     <?php if ( $recipes_query->have_posts() ) : ?>
     
@@ -45,24 +33,11 @@ function recipes_display_gluten_free_posts() {
         <?php endwhile; ?>
                         
         <?php wp_reset_postdata(); ?>
-            
+    <?php else : ?>
+        <p>Sorry, but we currently don`t have such recipes.</p>
     <?php endif; ?>
     <?php
 }
-
-
-
-/**
- * Wrapper for add_shortcode() functions. Initialized after 'init' hook. 
- *
- * @return void
- */
-function shortcodes_init(){
-    add_shortcode( 'recent-posts', 'recent_posts_function' );
-    
-   }
-
-   add_action('init', 'shortcodes_init');
 
 
 /**
@@ -89,7 +64,7 @@ function recipe_likes(){
         $likes_number = 0;
     }
 
-    //TODO:  add custom logic to prevent a user who already liked a recepi to vote again.
+    //TODO:  add custom logic to prevent a user who already liked a recipe to vote again.
     
     update_post_meta( $recipe_id, 'likes', $likes_number + 1 );
     $updated_likes = get_post_meta( $recipe_id, 'likes', true );

@@ -21,6 +21,8 @@ if ( ! defined( 'RECIPES_PlUGIN_DIR_INCLUDE' ) ) {
 
 require RECIPES_PlUGIN_DIR_INCLUDE . '/class-recipe.php';
 require RECIPES_PlUGIN_DIR_INCLUDE . '/functions.php';
+require RECIPES_PlUGIN_DIR_INCLUDE . '/shortcodes.php';
+
 
 /**
  * Enqueue all of the assets for my plugin
@@ -41,3 +43,16 @@ function su_recipes_enqueue() {
  }
  
  add_action( 'wp_enqueue_scripts', 'su_recipes_enqueue' );
+
+
+/**
+ * Wrapper for add_shortcode() functions. Initialized after 'init' hook. 
+ *
+ * @return void
+ */
+function shortcodes_init(){
+    add_shortcode( 'recent-posts', 'recent_posts_function' );
+    
+   }
+
+add_action('init', 'shortcodes_init');
