@@ -57,6 +57,31 @@
             </div>
         </section>
 
+        <section class="chocolate_section ">
+            <div class="container">
+                <div class="heading_container">
+                    <h2>
+                    Dairy free recipes
+                    </h2>
+                    <p>
+                        Below you can view our dairy-free recipes:
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="chocolate_container">
+                <?php
+                    if ( function_exists( 'display_recipe_by_meta' ) ) {
+                        display_recipe_by_meta( 'dairy_free', '1' );
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </section>
+
     </div>
 
 
