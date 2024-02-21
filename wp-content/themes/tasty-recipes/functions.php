@@ -24,7 +24,7 @@ function project_enqueue_assets(  ){
 
     wp_enqueue_style('bootstrap.min-css', TASTY_RECIPES_ASSETS_URL . '/css/bootstrap.css', false, TASTY_RECIPES_ASSETS_VERSION);
     wp_enqueue_style('font-awesome', TASTY_RECIPES_ASSETS_URL . '/css/font-awesome.min.css', false, TASTY_RECIPES_ASSETS_VERSION);
-    wp_enqueue_style('responsive.css', TASTY_RECIPES_ASSETS_URL . 'responsive.css', false, TASTY_RECIPES_ASSETS_VERSION);
+    wp_enqueue_style('responsive.css', TASTY_RECIPES_ASSETS_URL . '/responsive.css', false, TASTY_RECIPES_ASSETS_VERSION);
     wp_enqueue_style('slick-theme', TASTY_RECIPES_ASSETS_URL . '/css/slick-theme.css', false, TASTY_RECIPES_ASSETS_VERSION);
     wp_enqueue_style('slick.css', TASTY_RECIPES_ASSETS_URL . '/css/slick.css', false, TASTY_RECIPES_ASSETS_VERSION);
     wp_enqueue_style('style.css.map', TASTY_RECIPES_ASSETS_URL . '/css/style.css.map', false, TASTY_RECIPES_ASSETS_VERSION);

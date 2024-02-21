@@ -21,3 +21,23 @@ if ( ! defined( 'RECIPES_PlUGIN_DIR_INCLUDE' ) ) {
 
 require RECIPES_PlUGIN_DIR_INCLUDE . '/class-recipe.php';
 require RECIPES_PlUGIN_DIR_INCLUDE . '/functions.php';
+
+/**
+ * Enqueue all of the assets for my plugin
+ *
+ * @return void
+ */
+function su_recipes_enqueue() {
+
+    wp_enqueue_script( 'recipe-script', plugins_url( 'assets/js/script.js', __FILE__ ), array( 'jquery' ) );
+    wp_localize_script(
+        'recipe-script', 
+        'my_ajax_object', 
+        array( 
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'nonce'    => wp_create_nonce( 'ajax-nonce' ),            
+        )
+    );
+ }
+ 
+ add_action( 'wp_enqueue_scripts', 'su_recipes_enqueue' );
