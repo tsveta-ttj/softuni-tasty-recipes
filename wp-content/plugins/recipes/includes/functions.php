@@ -78,3 +78,33 @@ function recipe_likes(){
 }
 add_action('wp_ajax_nopriv_recipe_likes', 'recipe_likes');
 add_action('wp_ajax_recipe_likes', 'recipe_likes');
+
+
+/**
+ * Displays related posts to our single recipe view
+ * @param int - ID of the recipe
+ * @return void
+ */
+function display_related_posts( $post_id = 0 ) {
+    if ( empty( $post_id ) ) {
+        return;
+    }
+
+    if ( !function_exists( 'get_field' ) ) {
+        return;
+    }
+
+    $related_posts = get_field('recipes_relations', $post_id);
+
+    if ( !empty( $related_posts ) && is_array( $related_posts ) ) {
+        
+        foreach ( $related_posts as $post ) {
+            ?>
+                <div class="relate-posts">
+                    <a href="<?php echo get_the_permalink( $post->ID ) ?>"><?php echo $post->post_title ?></a>
+                </div>
+            <?php
+        }
+    }
+
+}

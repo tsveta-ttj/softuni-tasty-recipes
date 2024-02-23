@@ -46,6 +46,14 @@
             </div>
 
         </div>
+        <div>
+            <h4>Related posts:</h4>
+            <?php 
+                if ( function_exists( 'display_related_posts' ) ) {
+                    display_related_posts( get_the_ID() );
+                }
+            ?>
+        </div>
     </div>
 </section>
 
